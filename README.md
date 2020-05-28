@@ -98,7 +98,7 @@ This project is licensed under the Gnu General Public License - see the [LICENSE
   * The book that went in depth on the code behind the algorithm: [AI Techniques for Game Programming by Mat Buckland](https://www.amazon.com/Techniques-Programming-Premier-Press-Development/dp/193184108X)
    * The research paper that introduced the algorithm: [Evolving Neural Networks through Augmenting Topologies by Kenneth O. Stanley and Risto Miikkulainen](http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf)
 * Additional Sources
-  * An introductory article to the algorith: [NEAT: An Awesome Approach to NeuroEvolution](https://towardsdatascience.com/neat-an-awesome-approach-to-neuroevolution-3eca5cc7930f)
+  * An introductory article: [NEAT: An Awesome Approach to NeuroEvolution](https://towardsdatascience.com/neat-an-awesome-approach-to-neuroevolution-3eca5cc7930f)
   * More resources for those that are interested: [The NeuroEvolution of Augmenting Topologies (NEAT) Users Page](https://www.cs.ucf.edu/~kstanley/neat.html)
 
 
