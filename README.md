@@ -20,7 +20,7 @@ These instructions will get you a copy of the algorithm and running on your loca
 
 ### Prerequisites
 
-Your machine needs to be compatiable for running Java or C# Code. I recommend using the following IDEs or Engines that I have used the algorithm with:
+Your machine needs to be compatible for running Java or C# Code. I recommend using the following IDEs or Engines that I have used the algorithm with:
 
 Java
 ```
