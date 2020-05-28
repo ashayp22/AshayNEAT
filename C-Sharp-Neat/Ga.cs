@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Ga 
 {
@@ -155,7 +154,7 @@ public class Ga
             //rounded down or up to an integer may cause an overflow of genomes spawned
             //this makes sure it doesn't happen
 
-            if (NumSpawnedSoFar < GameManager.NUM_AI)
+            if (NumSpawnedSoFar < Settings.NUM_AI)
             {
                 //this is the amount of offspring this species is requred to spawn
                 //rounded simply rounds the double up or down
@@ -191,7 +190,7 @@ public class Ga
                             //spawn1
                             Genome g1 = vecSpecies[spc].Spawn();
 
-                            if (Random.Range(0f,1f) < GameManager.CROSSOVER_RATE)
+                            if (Random.Range(0f,1f) < Settings.CROSSOVER_RATE)
                             {
 
                                 //spawn2, make sure it is not the same as g1
@@ -225,24 +224,24 @@ public class Ga
                         //now we have a spawned child lets mutate it! First there is a chance a neuron may be added
 
 
-                        if (baby.getNumGenes() < GameManager.MAX_PERMITTED_NEURONS)
+                        if (baby.getNumGenes() < Settings.MAX_PERMITTED_NEURONS)
                         {
                             //Debug.Log("currently adding a neuron");
-                            baby.AddNeuron(GameManager.CHANCE_ADD_NODE, GameManager.NUM_TRYS_TO_FIND_OLD_LINK, innovation);
+                            baby.AddNeuron(Settings.CHANCE_ADD_NODE, Settings.NUM_TRYS_TO_FIND_OLD_LINK, innovation);
                         }
 
                         //nows there's a chance a link may be added
-                        baby.AddLink(GameManager.CHANCE_ADD_LINK, GameManager.CHANCE_ADD_RECURRENT_LINK, GameManager.NUM_TRYS_TO_FIND_LOOPED_LINK, GameManager.NUM_ADD_LINK_ATTEMPTS, innovation);
+                        baby.AddLink(Settings.CHANCE_ADD_LINK, Settings.CHANCE_ADD_RECURRENT_LINK, Settings.NUM_TRYS_TO_FIND_LOOPED_LINK, Settings.NUM_ADD_LINK_ATTEMPTS, innovation);
 
                         //                        System.out.println("added link");
 
                         //mutate the weights
-                        baby.MutateWeights(GameManager.MUTATION_RATE, GameManager.PROBABILITY_WEIGHT_REPLACED, GameManager.MAX_WEIGHT_PERTUBATION);
+                        baby.MutateWeights(Settings.MUTATION_RATE, Settings.PROBABILITY_WEIGHT_REPLACED, Settings.MAX_WEIGHT_PERTUBATION);
 
                         //                        System.out.println("mutated");
 
                         //mutate the activation response
-                        baby.MutateActivationResponse(GameManager.ACTIVATION_MUTATION_RATE, GameManager.MAX_ACTIVATION_PERTUBATION);
+                        baby.MutateActivationResponse(Settings.ACTIVATION_MUTATION_RATE, Settings.MAX_ACTIVATION_PERTUBATION);
 
                     }
 
@@ -254,7 +253,7 @@ public class Ga
 
                     NumSpawnedSoFar++;
 
-                    if (NumSpawnedSoFar == GameManager.NUM_AI)
+                    if (NumSpawnedSoFar == Settings.NUM_AI)
                     {
                         NumToSpawn = 0; //oh no, too many ai spawned; must get out of the loop
                     }
@@ -274,14 +273,14 @@ public class Ga
         //the population size, additional children need to be created and added to the new population. This is achieved simply, by using tournament selection
         //over the entire population
 
-        if (NumSpawnedSoFar < GameManager.NUM_AI)
+        if (NumSpawnedSoFar < Settings.NUM_AI)
         {
             //calculate the amount of additional children required
-            int required = GameManager.NUM_AI - NumSpawnedSoFar;
+            int required = Settings.NUM_AI - NumSpawnedSoFar;
 
             while (required > 0)
             {
-                Genome copyGenome = TournamentSelection(GameManager.NUM_AI / 2);
+                Genome copyGenome = TournamentSelection(Settings.NUM_AI / 2);
                 Genome.NextGenomeID++; //increases the id
                 copyGenome.setGenomeID(Genome.NextGenomeID);
                 newPopulation.Add(copyGenome);
@@ -357,7 +356,7 @@ public class Ga
 
         for (int i = 0; i < vecSpecies.Count; i++)
         {
-            if (vecSpecies[i].GensNoImprovement() >= GameManager.NUM_GENS_ALLOWED_NO_IMPROVEMENT)
+            if (vecSpecies[i].GensNoImprovement() >= Settings.NUM_GENS_ALLOWED_NO_IMPROVEMENT)
             {
                 spotsRemoved.Add(i);
             }
