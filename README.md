@@ -9,7 +9,8 @@ My version modifies the following to the algorithm:
 1. The artificial neural networks start with only input and output neurons, and every input neuron doesn't have to be linked to an ouput neuron. This allows the algorithm to start with minimal complexity. 
 2. The neural network isn't recurrent and only allows forward connections.
 3. The probabilities of increasing complexity are larger, such as the probability of adding neurons or links. 
-4. The activation function is Sigmoid, and there is no activation pertubation (the activation function doesn't change). 
+4. The activation function is Sigmoid, and there is no activation pertubation (the activation function doesn't change).
+5. The fittest neural network from the previous generation advances to the next generation.
 
 ## Getting Started
 
@@ -42,14 +43,17 @@ public static int NUM_AI = 40; //changes the number of agents to 40
 ```
 Then, declare and instantiate a reference to the algorithm in your code.
 ```
-private Ga neatAlgorithm = new Ga(Settings.NUM_AI, 10, 2); //the parameters are the number of ai, the number of input neurons, the number of output neurons
+private Ga neatAlgorithm = new Ga(Settings.NUM_AI, 10, 2); //the parameters are the number of ai (Int), the number of input neurons (Int), the number of output neurons (Int)
 ```
-Then, declare and instantiate a reference to the algorithm in your code.
+Then, gather inputs for each of the agents and recieve the outputs using this function. Remember to store fitness scores for each agent.
 ```
-private Ga neatAlgorithm = new Ga(Settings.NUM_AI, 10, 2); //the parameters are the number of ai, the number of input neurons, the number of output neurons
+private List<double> firstAgentOutput = neatAlgorithm.UpdateMember(0, inputs) //the parameters are the index (position) of the agent (Int) and the agent's inputs (List<double>)
 ```
-
-End with an example of getting some data out of the system or using it for a little demo
+Once all of the agents perish and the epoch is over, call the following function to update neural networks with mutations, crossover, and speciation, and then repeat the previous step
+```
+neatAlgorithm.Epoch(fitnessList); //the parameter is a list that represents the fitnesses for all of the agents(List<double>, elements must be greater than 0)
+```
+You should end with one or multiple neural networks that converge upon the solution. Remember, this may take a while depending on your problem, and may be faulty because you are feeding the incorrect inputs to the neural network or misinterpreting the ouputs. 
 
 ## Running the tests
 
