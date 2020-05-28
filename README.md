@@ -11,7 +11,7 @@ According to the [original paper on the algorithm](http://nn.cs.utexas.edu/downl
 1. The artificial neural networks start with only input and output neurons, and every input neuron doesn't have to be linked to an ouput neuron. This allows the algorithm to start with minimal complexity. 
 2. The neural network isn't recurrent and only allows forward connections.
 3. The probabilities of increasing complexity are larger, such as the probability of adding neurons or links. 
-4. The activation function is Sigmoid, and there is no activation pertubation (the activation function doesn't change).
+4. The activation function is the Sigmoid function and there is no activation pertubation (the activation function doesn't change).
 5. The fittest neural network from the previous generation advances to the next generation.
 
 ## Getting Started
