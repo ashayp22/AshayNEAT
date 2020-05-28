@@ -72,7 +72,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## License
 
-This project is licensed under the Gnu General Public License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the Gnu General Public License - see the [LICENSE.md](https://github.com/ashayp22/AshayNEAT/blob/master/LICENSE) file for details
 
 ## Acknowledgments
 
