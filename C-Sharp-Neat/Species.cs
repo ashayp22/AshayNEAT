@@ -44,16 +44,16 @@ public class Species
             double fitness = vecMembers[gen].getFitness();
 
             //boost the fitness scores if the species is young
-            if (age < GameManager.YOUNG_BONUS_AGE_THRESHOLD)
+            if (age < Settings.YOUNG_BONUS_AGE_THRESHOLD)
             {
-                fitness *= GameManager.YOUNG_FITNESS_BONUS;
+                fitness *= Settings.YOUNG_FITNESS_BONUS;
             }
 
             //punish the older species
 
-            if (age > GameManager.OLD_AGE_THRESHOLD)
+            if (age > Settings.OLD_AGE_THRESHOLD)
             {
-                fitness *= GameManager.OLD_AGE_PENALTY;
+                fitness *= Settings.OLD_AGE_PENALTY;
             }
 
             total += fitness;
