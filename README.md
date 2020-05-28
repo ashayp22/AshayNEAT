@@ -53,7 +53,7 @@ Once all of the agents perish and the epoch is over, call the following function
 ```
 neatAlgorithm.Epoch(fitnessList); //the parameter is a list that represents the fitnesses for all of the agents(List<double>, elements must be greater than 0)
 ```
-You should end with one or multiple neural networks that converge upon the solution. Remember, this may take a while depending on your problem, and may be faulty because you are feeding the incorrect inputs to the neural network or misinterpreting the ouputs. 
+You should end with one or multiple neural networks that converge upon the solution. Remember, this may take a while depending on your problem and may be faulty because you are feeding the incorrect inputs to the neural network or misinterpreting the ouputs. 
 
 ## Running the tests
 
