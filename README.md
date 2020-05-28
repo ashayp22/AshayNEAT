@@ -65,7 +65,19 @@ You should end with one or multiple neural networks that converge upon the solut
 
 You can deploy this algorithm in your final product. I have had success deploying the algorithm in [Unity Game Engine](https://unity.com/) and [jMonkeyEngine products](https://jmonkeyengine.org/), but the algorithm isn't limited to only that. 
 
-## Built With
+## Example Projects
+
+Here are some example projects that I have used AshayNEAT in:
+
+C#
+* [Flappy Neat](https://ashayp.com/flappyneat/)
+* [Doodle Neat](https://ashayp.com/doodleneat/)
+* [Breakout Neat](https://ashayp.com/breakoutneat/)
+
+Java
+* [NeuroRun](https://ashayp.com/NeuroRun/launch.html)
+
+## Software
 
 * [C#](https://docs.microsoft.com/en-us/dotnet/csharp/) - The programming language used
 * [Java](https://docs.oracle.com/en/java/) - The programming language used
