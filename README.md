@@ -8,11 +8,11 @@ My version modifies the following to the algorithm:
 
 1. The artificial neural networks start with only input and output neurons, and every input neuron doesn't have to be linked to an ouput neuron. This allows the algorithm to start with minimal complexity. 
 2. The neural network isn't recurrent and only allows forward connections.
-3. 
+3. The probabilities of increasing complexity are larger, such as the probability of adding neurons or links. 
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the algorithm and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
