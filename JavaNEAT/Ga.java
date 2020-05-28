@@ -163,7 +163,7 @@ public class Ga { //genetic algorithm class
             //rounded down or up to an integer may cause an overflow of genomes spawned
             //this makes sure it doesn't happen
 
-            if(NumSpawnedSoFar < Main.NUM_AI)
+            if(NumSpawnedSoFar < Settings.NUM_AI)
             {
                 //this is the amount of offspring this species is requred to spawn
                 //rounded simply rounds the double up or down
@@ -197,7 +197,7 @@ public class Ga { //genetic algorithm class
                             //spawn1
                             Genome g1 = vecSpecies.get(spc).Spawn();
 
-                            if (Math.random() < Main.CROSSOVER_RATE)
+                            if (Math.random() < Settings.CROSSOVER_RATE)
                             {
 
                                 //spawn2, make sure it is not the same as g1
@@ -230,24 +230,24 @@ public class Ga { //genetic algorithm class
                         //now we have a spawned child lets mutate it! First there is a chance a neuron may be added
 
                         
-                        if(baby.getNumGenes() < Main.MAX_PERMITTED_NEURONS)
+                        if(baby.getNumGenes() < Settings.MAX_PERMITTED_NEURONS)
                         {
                             System.out.println("currently adding a neuron");
-                            baby.AddNeuron(Main.CHANCE_ADD_NODE, Main.NUM_TRYS_TO_FIND_OLD_LINK, innovation);
+                            baby.AddNeuron(Settings.CHANCE_ADD_NODE, Settings.NUM_TRYS_TO_FIND_OLD_LINK, innovation);
                         }
 
                         //nows there's a chance a link may be added
-                        baby.AddLink(Main.CHANCE_ADD_LINK, Main.CHANCE_ADD_RECURRENT_LINK, Main.NUM_TRYS_TO_FIND_LOOPED_LINK, Main.NUM_ADD_LINK_ATTEMPTS, innovation);
+                        baby.AddLink(Settings.CHANCE_ADD_LINK, Settings.CHANCE_ADD_RECURRENT_LINK, Settings.NUM_TRYS_TO_FIND_LOOPED_LINK, Settings.NUM_ADD_LINK_ATTEMPTS, innovation);
 
 //                        System.out.println("added link");
                         
                         //mutate the weights
-                        baby.MutateWeights(Main.MUTATION_RATE, Main.PROBABILITY_WEIGHT_REPLACED, Main.MAX_WEIGHT_PERTUBATION);
+                        baby.MutateWeights(Settings.MUTATION_RATE, Settings.PROBABILITY_WEIGHT_REPLACED, Settings.MAX_WEIGHT_PERTUBATION);
 
 //                        System.out.println("mutated");
                         
                         //mutate the activation response
-                        baby.MutateActivationResponse(Main.ACTIVATION_MUTATION_RATE, Main.MAX_ACTIVATION_PERTUBATION);
+                        baby.MutateActivationResponse(Settings.ACTIVATION_MUTATION_RATE, Settings.MAX_ACTIVATION_PERTUBATION);
                     }
                     
                     //sort the babies genes by their innvovation numbers
@@ -258,7 +258,7 @@ public class Ga { //genetic algorithm class
                     
                     NumSpawnedSoFar++;
 
-                    if (NumSpawnedSoFar == Main.NUM_AI)
+                    if (NumSpawnedSoFar == Settings.NUM_AI)
                     {
                         NumToSpawn = 0; //oh no, too many ai spawned; must get out of the loop
                     }
@@ -278,14 +278,14 @@ public class Ga { //genetic algorithm class
         //the population size, additional children need to be created and added to the new population. This is achieved simply, by using tournament selection
         //over the entire population
 
-        if(NumSpawnedSoFar < Main.NUM_AI)
+        if(NumSpawnedSoFar < Settings.NUM_AI)
         {
             //calculate the amount of additional children required
-            int required = Main.NUM_AI-NumSpawnedSoFar;
+            int required = Settings.NUM_AI-NumSpawnedSoFar;
 
             while(required > 0)
             {
-                Genome copyGenome = TournamentSelection(Main.NUM_AI / 2);
+                Genome copyGenome = TournamentSelection(Settings.NUM_AI / 2);
                 Genome.NextGenomeID++; //increases the id
                 copyGenome.setGenomeID(Genome.NextGenomeID);
                 newPopulation.add(copyGenome);
@@ -362,7 +362,7 @@ public class Ga { //genetic algorithm class
 
         for(int i = 0; i < vecSpecies.size(); i++)
         {
-            if(vecSpecies.get(i).GensNoImprovement() >= Main.NUM_GENS_ALLOWED_NO_IMPROVEMENT)
+            if(vecSpecies.get(i).GensNoImprovement() >= Settings.NUM_GENS_ALLOWED_NO_IMPROVEMENT)
             {
                 spotsRemoved.add(i);
             }
