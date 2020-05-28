@@ -81,7 +81,7 @@ This project is licensed under the Gnu General Public License - see the [LICENSE
 
 * My Sources
   * [AI Techniques for Game Programming by Mat Buckland](https://www.amazon.com/Techniques-Programming-Premier-Press-Development/dp/193184108X)
-   * [Evolving Neural Networks through Augmenting Topologies by Kenneth O. Stanley and Risto Miikkulainen(http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf)
+   * [Evolving Neural Networks through Augmenting Topologies by Kenneth O. Stanley and Risto Miikkulainen](http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf)
 * Additional Sources
   * [NEAT: An Awesome Approach to NeuroEvolution](https://towardsdatascience.com/neat-an-awesome-approach-to-neuroevolution-3eca5cc7930f)
   * [The NeuroEvolution of Augmenting Topologies (NEAT) Users Page](https://www.cs.ucf.edu/~kstanley/neat.html)
