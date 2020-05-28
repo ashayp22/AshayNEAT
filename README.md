@@ -41,7 +41,13 @@ Next, adjust the hyperparameters found in Settings.cs or Settings.java if you wa
 ```
 public static int NUM_AI = 40; //changes the number of agents to 40
 ```
-Then, declare and instantiate a reference to the algorithm in your code.
+You should now be ready to implement the algorithm in your project.
+
+## Implementing the algorithm
+
+Explain how to run the automated tests for this system
+
+First, declare and instantiate a reference to the algorithm in your code.
 ```
 private Ga neatAlgorithm = new Ga(Settings.NUM_AI, 10, 2); //the parameters are the number of ai (Int), the number of input neurons (Int), the number of output neurons (Int)
 ```
@@ -55,29 +61,9 @@ neatAlgorithm.Epoch(fitnessList); //the parameter is a list that represents the 
 ```
 You should end with one or multiple neural networks that converge upon the solution. Remember, this may take a while depending on your problem and may be faulty because you are feeding the incorrect inputs to the neural network or misinterpreting the ouputs. 
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+You can deploy this algorithm in your final product. I have had success deploying the algorithm in [Unity Game Engine](https://unity.com/) and [jMonkeyEngine products](https://jmonkeyengine.org/), but the algorithm isn't limited to only that. 
 
 ## Built With
 
