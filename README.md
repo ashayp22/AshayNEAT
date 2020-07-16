@@ -1,6 +1,8 @@
 # AshayNEAT
 
  ### AshayNEAT is my implementation of the NEAT (Neuroevolution of Augmenting Topologies) algorithm.  ###
+ 
+ ![Preview](https://miro.medium.com/max/1200/0*Kze4g6cLA3maofxq.png)
 
 According to the [original paper on the algorithm](http://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf) written by Kenneth O. Stanley and Risto Miikkulainen: 
 
